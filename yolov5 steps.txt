@@ -1,0 +1,46 @@
+Used to install pytorch and dependencies to conda environment
+Conda environment is using python 3.10
+conda install pytorch torchvision torchaudio pytorch-cuda=11.7 -c pytorch -c nvidia
+
+Clone yoloV5 from repo
+git clone https://github.com/ultralytics/yolov5
+
+Center directory to yolov5 clone
+cd yolov5/
+
+Update and check for the list in requirements.txt 
+pip install -r requirements.txt
+
+Start object detection using webcam, source is dictated using webcams starting at 0
+python detect.py --source 0
+
+Interrupt command 
+CTRL + C
+
+Adding larger weights to the detect 
+python detect.py --weights yolov5x.pt --source 0
+
+Loads video file into detect.py with yolov5x weights
+python detect.py --weights yolov5x.pt --data C:\Users\ssala\Desktop\models\1234.mp4
+
+yolov5x weights applied to Liella! Debut mv
+python detect.py --weights yolov5x.pt --source C:\Users\ssala\Desktop\models\Liella.mp4 --view-img 
+
+yolov5x weights applied to 30 mins of cars from 2009
+python detect.py --weights yolov5x.pt --source C:\Users\ssala\Desktop\models\1234.mp4 --view-img 
+
+Minimum confidence threshold rasied to 0.9, fewer detections are made unless the model is sure that it is finding something
+Note: darker silohouettes had a better detection rate than lighter colored persons and outfits
+python detect.py --weights yolov5x.pt --source C:\Users\ssala\Desktop\models\Liella.mp4 --view-img --conf-thres 0.9
+
+Lowers the boundary box overlay to 0.5
+python detect.py --weights yolov5x.pt --source C:\Users\ssala\Desktop\models\Liella.mp4 --view-img --iou-thres 0.5
+
+Decrease confidence threshold to 0.1 and increase boundary boxing to 0.9
+python detect.py --weights yolov5x.pt --source C:\Users\ssala\Desktop\models\Liella.mp4 --view-img --conf-thres 0.1 --iou-thres 0.9
+
+Basic detection with no weights added
+python detect.py --source 0 --conf-thres 0.4 --iou-thres 0.5
+
+yolov5x.pt weights added, increased the detection rate of background objects, but created extra erroneous detections in the foreground
+python detect.py --source 0 --conf-thres 0.4 --iou-thres 0.5 --weights yolov5x.pt
