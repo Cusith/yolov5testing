@@ -24,11 +24,13 @@ Living room table with an assortment of objects on table and in background.
 Hayward Public Library 3rd floor window to the outside.  
   
 ### Setup  
-1. Install [miniconda](https://docs.conda.io/en/latest/miniconda.html) as environment to run the model.  
-2. Open up miniconda and use the command: **_conda install pytorch torchvision torchaudio pytorch-cuda=11.7 -c pytorch -c nvidia_**  
-3. Clone yolov5 from it's repository with the command: **_git clone https://github.com/ultralytics/yolov5_**
-4. Retarget the directory to the yolov5 clone with the command: **_cd yolov5/_**  
-5. If step 2 went well it should have installed **_pip_**, if **_pip_** was not installed run this command: **_conda install pip_**, run this command to install the rest of the requirements documented in the yolov5 repository: **_pip install -r requirements.txt_**  
+1. Install [miniconda](https://docs.conda.io/en/latest/miniconda.html) as environment to run the model.
+2. Use the command: **_conda create --name (name of environment)_** here you create a new environment specifically for yolov5.
+3. If miniconda did not place you into the environment after creating it you can use: **_conda activate (name of environment)_** where the name of environment is the one you choose. This is also how you enter the newly made environment from now on.   
+4. Open up miniconda and use the command: **_conda install pytorch torchvision torchaudio pytorch-cuda=11.7 -c pytorch -c nvidia_**  
+5. Clone yolov5 from it's repository with the command: **_git clone https://github.com/ultralytics/yolov5_**  
+6. Retarget the directory to the yolov5 clone with the command: **_cd yolov5/_** this can change depending on your system and the **_/_** can sometimes be left out.  
+7. If step 2 went well it should have installed **_pip_**, if **_pip_** was not installed run this command: **_conda install pip_**, run this command to install the rest of the requirements documented in the yolov5 repository: **_pip install -r requirements.txt_**  
 
 ### Live Webcam Setup  
 1. Make sure you have a webcam plugged into the system, if you only have one the default **_source_** will be 0.  
