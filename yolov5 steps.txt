@@ -1,3 +1,5 @@
+Please note that for the most part these commands and steps should work on most machines save for specific differences such as system directories and differing file system pathings. Refer to the README.md for more detailed instructions.
+
 Used to install pytorch and dependencies to conda environment
 Conda environment is using python 3.10
 conda install pytorch torchvision torchaudio pytorch-cuda=11.7 -c pytorch -c nvidia
